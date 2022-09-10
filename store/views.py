@@ -2,8 +2,7 @@ from turtle import end_fill
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
 from category.models import Category
-from .models import Product
-from category.models import Category
+from .models import Product, VariationProduct
 from django.core.paginator import Paginator
 # Create your views here.
 
@@ -31,5 +30,9 @@ def store(request, category_id=None):
 def product_detail(request, category_id=None, product_id=None):
     product = get_object_or_404(
         Product, id=product_id, category_id=category_id)
-    context = {'product': product, }
+    product_sizes = product.variations.only_sizes()
+    product_colors = product.variations.only_colors()
+    context = {'product': product,
+               'product_sizes': product_sizes, 'product_colors': product_colors}
     return render(request, 'store/product_detail.html', context)
+"#dbc785"

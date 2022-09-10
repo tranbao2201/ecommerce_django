@@ -44,8 +44,10 @@
 												>{{item.product.product_name}}</a
 											>
 											<p class="text-muted small">
-												Matrix: 25 Mpx <br />
-												Brand: Canon
+												{% for variation in item.variations.all %}
+												{{variation.get_variation_type_display}}: {{variation.variation_value}}
+												<br />
+												{% endfor %}
 											</p>
 										</figcaption>
 									</figure>

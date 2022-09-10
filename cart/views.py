@@ -1,7 +1,10 @@
+from statistics import variance
 from django.shortcuts import get_object_or_404, render, redirect
 from cart.models import Cart, CartItem
 from cart.service.cart import CartService
-from store.models import Product
+from store.managers.variation_product import VariationProductQuerySet
+from store.models import Product, VariationProduct, VariationType
+from django.db.models import Q
 # Create your views here.
 
 
@@ -25,12 +28,27 @@ def cart(request):
 
 
 def add_cart(request, product_id):
+    data = request.POST.copy()
+    color = data.get('color')
+    size = data.get('size')
     product = Product.objects.get(id=product_id)
+    _filter = Q(variation_type=VariationType.COLOR, variation_value=color) | Q(
+        variation_type=VariationType.SIZE, variation_value=size)
+    variations = VariationProduct.objects.filter(_filter, product=product)
     cart = Cart.objects.get_or_create(
         cart_id=CartService.get_cart_id(request))[0]
-    cart_item = CartItem.objects.get_or_create(product=product, cart=cart)[0]
-    cart_item.quantity += 1
-    cart_item.save()
+    cart_items = CartItem.objects.filter(
+        product=product, cart=cart, variations=variations.first())
+    item = CartItem.objects.none()
+    for cart_item in cart_items:
+        if set(cart_item.variations.all()) == set(variations):
+            item = cart_item
+            break
+    if not item:
+        item = CartItem.objects.create(product=product, cart=cart)
+        item.variations.add(*variations)
+    item.quantity += 1
+    item.save()
     _update_product_stock(product, -1)
     return redirect('cart')
 
