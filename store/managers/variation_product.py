@@ -4,15 +4,16 @@ from django.db.models.query import QuerySet
 
 
 class VariationProductQuerySet(QuerySet):
-    pass
+    def filter(self, *args, **kwargs):
+        return super().filter(*args, **kwargs)
 
 
 class VariationProductManager(models.Manager):
     def get_queryset(self):
-        return QuerySet(self.model, using=self._db).filter(is_active=True)
+        return VariationProductQuerySet(self.model, using=self._db).filter(is_active=True)
 
-    def include_deactivate(self):
-        return QuerySet(self.model, using=self._db)
+    def include_deactivate(self, *args, **kwargs):
+        return VariationProductQuerySet(self.model, using=self._db)
 
     def only_sizes(self):
         return self.get_queryset().filter(variation_type=VariationType.SIZE)

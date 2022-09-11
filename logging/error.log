@@ -1,0 +1,179 @@
+Internal Server Error: /cart/register
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 46, in register
+    send_email.send()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/local/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/usr/local/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/usr/local/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials y24-20020aa78f38000000b00536097dd45bsm2939474pfr.134 - gsmtp')
+Internal Server Error: /cart/register
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 46, in register
+    send_email.send()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/local/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/usr/local/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/usr/local/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials w2-20020a1709026f0200b00172ba718ed4sm3542740plk.138 - gsmtp')
+Internal Server Error: /cart/register
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 46, in register
+    send_email.send()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/local/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/usr/local/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/usr/local/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. Learn more at\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor r3-20020aa79623000000b0053e57b0a233sm2949348pfg.164 - gsmtp')
+Internal Server Error: /cart/register
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 46, in register
+    send_email.send()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/message.py", line 284, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 102, in send_messages
+    new_conn_created = self.open()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/mail/backends/smtp.py", line 69, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/local/lib/python3.6/smtplib.py", line 730, in login
+    raise last_exception
+  File "/usr/local/lib/python3.6/smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "/usr/local/lib/python3.6/smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. Learn more at\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor f20-20020a635114000000b0041c30def5e8sm3350253pgb.33 - gsmtp')
+Internal Server Error: /cart/dashboard
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 94, in dashboard
+    return render(request, 'accounts/dashboard.html', {})
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/dashboard.html
+Internal Server Error: /account/forgot_password
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 111, in forgot_password
+    'token': default_token_generator.make_token(user),
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/defaulttags.py", line 39, in render
+    output = self.nodelist.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'resetpassword_validate' with keyword arguments '{'uidb64': 'MjE', 'token': 'bbl18t-57974ddec1f916860710bcaf78ac6552'}' not found. 1 pattern(s) tried: ['account\\/resetpassword_validate$']
+Internal Server Error: /account/resetpassword_validate/MjE/bbl1e5-5fe143b1673ea3b15df01bc3738367a1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 137, in resetpassword_validate
+    messages.errors(request, 'This link has been expired')
+AttributeError: module 'django.contrib.messages' has no attribute 'errors'
+Internal Server Error: /account/resetpassword_validate/MjE/bbl1e5-5fe143b1673ea3b15df01bc3738367a1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 137, in resetpassword_validate
+    messages.errors(request, 'This link has been expired')
+AttributeError: module 'django.contrib.messages' has no attribute 'errors'
+Internal Server Error: /account/resetpassword_validate/MjE/bbl1e5-5fe143b1673ea3b15df01bc3738367a1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 137, in resetpassword_validate
+    messages.errors(request, 'This link has been expired')
+AttributeError: module 'django.contrib.messages' has no attribute 'errors'
+Internal Server Error: /account/resetpassword_validate/MjE/bbl1e5-5fe143b1673ea3b15df01bc3738367a1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 137, in resetpassword_validate
+    messages.errors(request, 'This link has been expired')
+AttributeError: module 'django.contrib.messages' has no attribute 'errors'
+Internal Server Error: /account/resetpassword_validate/MjE/bbl1e5-5fe143b1673ea3b15df01bc3738367a1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 137, in resetpassword_validate
+    messages.errors(request, 'This link has been expired')
+AttributeError: module 'django.contrib.messages' has no attribute 'errors'

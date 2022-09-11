@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import logging.config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -134,40 +135,73 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
-if DEBUG:
-    import logging
-    l = logging.getLogger('django.db.backends')
-    l.setLevel(logging.DEBUG)
-    l.addHandler(logging.StreamHandler())
-
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
     },
     'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        },'console': {
+        'file_debug': {
             'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'logging/debug.log',
+            'filters': ['require_debug_true'],
+            'formatter': 'verbose',
+        },
+        'file_error': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'logging/error.log',
+            'filters': ['require_debug_true'],
+        },
+        'console': {
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
+            'filters': ['require_debug_true'],
         },
     },
     'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },'django.db.backends.sqlite3': {
+        'django.db.backends': {
+            'handlers': ['file_debug'],
             'level': 'DEBUG',
-            'handlers': ['console'],
+            'propagate': False,
         },
-    }
+        'django.request': {
+            'handlers': ['file_error'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
 }
+
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+#SMTP Configuration
+
+EMAIL_HOST ='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tranvanbao2201@gmail.com'
+EMAIL_HOST_PASSWORD = 'ccrwarmzmjzjzxdd'
+EMAIL_USE_TLS = True
