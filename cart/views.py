@@ -5,16 +5,17 @@ from cart.service.cart import CartService
 from store.managers.variation_product import VariationProductQuerySet
 from store.models import Product, VariationProduct, VariationType
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
 def cart(request):
-    try:
-        cart = Cart.objects.get(cart_id=CartService.get_cart_id(request))
+    cart = CartService.get_cart(request)
+    if cart is not None:
         cart_items = CartItem.objects.filter(cart=cart)
         total_item = cart.get_total_item()
         total_price = cart.get_total_price()
-    except Cart.DoesNotExist:
+    else:
         cart_items = []
         total_item = 0
         total_price = 0
@@ -35,8 +36,7 @@ def add_cart(request, product_id):
     _filter = Q(variation_type=VariationType.COLOR, variation_value=color) | Q(
         variation_type=VariationType.SIZE, variation_value=size)
     variations = VariationProduct.objects.filter(_filter, product=product)
-    cart = Cart.objects.get_or_create(
-        cart_id=CartService.get_cart_id(request))[0]
+    cart = CartService.get_cart(request) or CartService.create_cart(request)
     cart_items = CartItem.objects.filter(
         product=product, cart=cart, variations=variations.first())
     item = CartItem.objects.none()
@@ -54,7 +54,7 @@ def add_cart(request, product_id):
 
 
 def remove_cart(request, id):
-    cart = Cart.objects.get(cart_id=CartService.get_cart_id(request))
+    cart = CartService.get_cart(request)
     try:
         cart_item = CartItem.objects.get(id=id, cart=cart)
         if cart_item.quantity > 1:
@@ -76,6 +76,25 @@ def remove_cart_item(request, cart_id):
     except cart_item.DoesNotExist:
         pass
     return redirect('cart')
+
+
+@login_required(login_url='login')
+def checkout(request):
+    try:
+        cart = CartService.get_cart(request)
+        cart_items = CartItem.objects.filter(cart=cart)
+        total_item = cart.get_total_item()
+        total_price = cart.get_total_price()
+    except Cart.DoesNotExist:
+        cart_items = []
+        total_item = 0
+        total_price = 0
+    context = {
+        'cart_items': cart_items,
+        'total_item': total_item,
+        'total_price': total_price,
+    }
+    return render(request, 'store/checkout.html', context)
 
 
 def _update_product_stock(product: Product, quantity: int) -> Product:

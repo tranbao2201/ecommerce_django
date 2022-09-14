@@ -7,9 +7,6 @@ def count_cart(request):
         return {}
     else:
         cart_count = 0
-        try:
-            cart = Cart.objects.get(cart_id=CartService.get_cart_id(request))
-            cart_count = cart.get_total_item()
-        except Cart.DoesNotExist:
-            pass
+        cart = CartService.get_cart(request)
+        cart_count = 0 if cart is None else cart.get_total_item()
         return dict(cart_count=cart_count)

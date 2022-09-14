@@ -177,3 +177,845 @@ Traceback (most recent call last):
   File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 137, in resetpassword_validate
     messages.errors(request, 'This link has been expired')
 AttributeError: module 'django.contrib.messages' has no attribute 'errors'
+Internal Server Error: /cart/checkout
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 186, in _get_response
+    self.check_response(response, callback)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 309, in check_response
+    "instead." % name
+ValueError: The view cart.views.checkout didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /cart/checkout
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 95, in checkout
+    return render(request, 'store/checkout.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: cart/checkout.html
+Internal Server Error: /cart/add_cart/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 42, in add_cart
+    cart_id=CartService.get_cart_id(request), user=request.user)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f91403077b8>>": "Cart.user" must be a "Account" instance.
+Internal Server Error: /cart/add_cart/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 42, in add_cart
+    cart_id=CartService.get_cart_id(request), user=request.user)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f91401deb70>>": "Cart.user" must be a "Account" instance.
+Internal Server Error: /account/dashboard
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 107, in dashboard
+    return render(request, 'accounts/dashboard.html', {})
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 10, in count_cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 16, in get_cart
+    cart = Cart.objects.get(user=request.user)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 436, in get
+    num if not limit or num < limit else 'more than %s' % (limit - 1),
+cart.models.Cart.MultipleObjectsReturned: get() returned more than one Cart -- it returned 2!
+Internal Server Error: /cart/remove_cart_item/57
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 76, in remove_cart_item
+    cart_item = CartItem.objects.get(id=cart_id)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.CartItem.DoesNotExist: CartItem matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 79, in remove_cart_item
+    except cart_item.DoesNotExist:
+UnboundLocalError: local variable 'cart_item' referenced before assignment
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Cart'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 15, in cart
+    cart_items = CartItem.objects.filter(cart=cart)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_lookups.py", line 115, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got <Cart: bkl7sfzyo3xizj7ry80ywycaxhrfibx6>.
+Internal Server Error: /store/2/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/store/views.py", line 37, in product_detail
+    return render(request, 'store/product_detail.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 11, in count_cart
+    cart_count = 0 if cart is None else cart.get_total_item()
+AttributeError: 'tuple' object has no attribute 'get_total_item'
+Internal Server Error: /store/2/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/store/views.py", line 37, in product_detail
+    return render(request, 'store/product_detail.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 11, in count_cart
+    cart_count = 0 if cart is None else cart.get_total_item()
+AttributeError: 'tuple' object has no attribute 'get_total_item'
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/greatkart/views.py", line 10, in home
+    return render(request, 'home.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 11, in count_cart
+    cart_count = 0 if cart is None else cart.get_total_item()
+AttributeError: 'tuple' object has no attribute 'get_total_item'
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Cart'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 15, in cart
+    cart_items = CartItem.objects.filter(cart=cart)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_lookups.py", line 115, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got <Cart: bkl7sfzyo3xizj7ry80ywycaxhrfibx6>.
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Cart'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 15, in cart
+    cart_items = CartItem.objects.filter(cart=cart)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_lookups.py", line 115, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got <Cart: bkl7sfzyo3xizj7ry80ywycaxhrfibx6>.
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Cart'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 15, in cart
+    cart_items = CartItem.objects.filter(cart=cart)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_lookups.py", line 115, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got <Cart: bkl7sfzyo3xizj7ry80ywycaxhrfibx6>.
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Cart'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 15, in cart
+    cart_items = CartItem.objects.filter(cart_id=cart.id)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1165, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/lookups.py", line 24, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_lookups.py", line 115, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'id' expected a number but got <Cart: bkl7sfzyo3xizj7ry80ywycaxhrfibx6>.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 573, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.Cart.DoesNotExist: Cart matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/greatkart/views.py", line 10, in home
+    return render(request, 'home.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 9, in count_cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 18, in get_cart
+    cart = Cart.objects.get_or_create(cart_id=cls.get_cart_id(request))[0]
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 576, in get_or_create
+    return self._create_object_from_params(kwargs, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 610, in _create_object_from_params
+    obj = self.create(**params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 751, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 789, in save_base
+    force_update, using, update_fields,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 932, in _do_insert
+    using=using, raw=raw,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 573, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.Cart.DoesNotExist: Cart matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/greatkart/views.py", line 10, in home
+    return render(request, 'home.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 9, in count_cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 17, in get_cart
+    cart = Cart.objects.get_or_create(cart_id=cls.get_cart_id(request))[0]
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 576, in get_or_create
+    return self._create_object_from_params(kwargs, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 610, in _create_object_from_params
+    obj = self.create(**params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 751, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 789, in save_base
+    force_update, using, update_fields,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 932, in _do_insert
+    using=using, raw=raw,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 573, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.Cart.DoesNotExist: Cart matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/greatkart/views.py", line 10, in home
+    return render(request, 'home.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 9, in count_cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 17, in get_cart
+    cart = Cart.objects.get_or_create(cart_id=cls.get_cart_id(request))[0]
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 576, in get_or_create
+    return self._create_object_from_params(kwargs, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 610, in _create_object_from_params
+    obj = self.create(**params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 751, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 789, in save_base
+    force_update, using, update_fields,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 932, in _do_insert
+    using=using, raw=raw,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 573, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.Cart.DoesNotExist: Cart matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 13, in cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 17, in get_cart
+    cart = Cart.objects.get_or_create(cart_id=cls.get_cart_id(request))[0]
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 576, in get_or_create
+    return self._create_object_from_params(kwargs, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 610, in _create_object_from_params
+    obj = self.create(**params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 751, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 789, in save_base
+    force_update, using, update_fields,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 932, in _do_insert
+    using=using, raw=raw,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+Internal Server Error: /store/2/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 573, in get_or_create
+    return self.get(**kwargs), False
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.Cart.DoesNotExist: Cart matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/store/views.py", line 37, in product_detail
+    return render(request, 'store/product_detail.html', context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 9, in count_cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 17, in get_cart
+    cart = Cart.objects.get_or_create(cart_id=cls.get_cart_id(request))[0]
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 576, in get_or_create
+    return self._create_object_from_params(kwargs, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 610, in _create_object_from_params
+    obj = self.create(**params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 751, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 789, in save_base
+    force_update, using, update_fields,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 892, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 932, in _do_insert
+    using=using, raw=raw,
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 1249, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1395, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: cart_cart.cart_id
+Internal Server Error: /account/login
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 18, in get_cart
+    cart = Cart.objects.get(cart_id=cls.get_cart_id(request))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 431, in get
+    self.model._meta.object_name
+cart.models.Cart.DoesNotExist: Cart matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 79, in login
+    return render(request, 'accounts/login.html', {})
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/base.py", line 168, in render
+    with context.bind_template(self):
+  File "/usr/local/lib/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/template/context.py", line 244, in bind_template
+    updates.update(processor(self.request))
+  File "/home/tranbao/Desktop/ecommerce_django/cart/context_processors.py", line 10, in count_cart
+    cart = CartService.get_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 19, in get_cart
+    except cart.DoesNotExist:
+UnboundLocalError: local variable 'cart' referenced before assignment
+Internal Server Error: /cart/add_cart/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 39, in add_cart
+    cart = CartService.get_cart(request) or CartService.create_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 26, in create_cart
+    cart_id=cls.get_cart_id(request))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f996e6b3da0>>": "Cart.user" must be a "Account" instance.
+Internal Server Error: /cart/add_cart/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 39, in add_cart
+    cart = CartService.get_cart(request) or CartService.create_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 26, in create_cart
+    cart_id=cls.get_cart_id(request))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f996dcc2da0>>": "Cart.user" must be a "Account" instance.
+Internal Server Error: /cart/add_cart/1
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/views.py", line 39, in add_cart
+    cart = CartService.get_cart(request) or CartService.create_cart(request)
+  File "/home/tranbao/Desktop/ecommerce_django/cart/service/cart.py", line 26, in create_cart
+    cart_id=cls.get_cart_id(request))
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/query.py", line 445, in create
+    obj = self.model(**kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 220, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f996dd38f98>>": "Cart.user" must be a "Account" instance.
