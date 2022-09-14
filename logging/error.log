@@ -1019,3 +1019,12 @@ Traceback (most recent call last):
   File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/db/models/fields/related_descriptors.py", line 220, in __set__
     self.field.remote_field.model._meta.object_name,
 ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x7f996dd38f98>>": "Cart.user" must be a "Account" instance.
+Internal Server Error: /account/login
+Traceback (most recent call last):
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/tranbao/Desktop/ecommerce_django/env/lib/python3.6/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/tranbao/Desktop/ecommerce_django/accounts/views.py", line 68, in login
+    url = requests.META.get('HTTP_REFERER')
+AttributeError: module 'requests' has no attribute 'META'

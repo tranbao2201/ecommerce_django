@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 def cart(request):
     cart = CartService.get_cart(request)
     if cart is not None:
-        cart_items = CartItem.objects.filter(cart=cart)
+        cart_items = cart.cart_items.all()
         total_item = cart.get_total_item()
         total_price = cart.get_total_price()
     else:
@@ -82,7 +82,7 @@ def remove_cart_item(request, cart_id):
 def checkout(request):
     try:
         cart = CartService.get_cart(request)
-        cart_items = CartItem.objects.filter(cart=cart)
+        cart_items = cart_items = cart.cart_items.all()
         total_item = cart.get_total_item()
         total_price = cart.get_total_price()
     except Cart.DoesNotExist:

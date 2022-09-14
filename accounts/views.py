@@ -9,6 +9,7 @@ from cart.models import Cart
 from cart.service.cart import CartService
 from .forms import RegistrationForm
 from django.contrib.auth.decorators import login_required
+import requests
 
 # activate accounts
 from django.contrib.sites.shortcuts import get_current_site
@@ -61,34 +62,17 @@ def login(request):
         password = request.POST.get('password')
         user = auth.authenticate(email=email, password=password)
         if user is not None:
-            try:
-                session_cart = Cart.objects.get(
-                    cart_id=CartService.get_cart_id(request))
-                session_cart_items = session_cart.cart_items.all()
-                if session_cart_items.exists():
-                    user_cart = user.cart
-                    if user_cart:
-                        user_cart_items = user_cart.cart_items.all()
-                        session_variation_ids = [list(cart_item.variations.values_list("id",flat=True)) for cart_item in session_cart_items]
-                        user_variantion_ids = [list(cart_item.variations.values_list("id",flat=True)) for cart_item in user_cart_items]
-                        for ids in session_variation_ids:
-                            if ids in user_variantion_ids:
-                                user_cart_item = user_cart_items[user_variantion_ids.index(ids)]
-                                session_cart_item = session_cart_items[session_variation_ids.index(ids)]
-                                user_cart_item.quantity += session_cart_item.quantity
-                                
-                            else:
-                                session_cart_item = session_cart_items[session_variation_ids.index(ids)]
-                                user_cart_item = user_cart.cart_items.add(session_cart_item)
-                            user_cart_item.save()
-                    else:
-                        session_cart.user = user
-                        session_cart.save()
-            except:
-                pass
+            CartService.merge_cart(request, user)
             auth.login(request, user)
             messages.success(request, 'Login Success')
-            return redirect('dashboard')
+            url = request.META.get('HTTP_REFERER')
+            try:
+                query = requests.utils.urlparse(url).query
+                params = dict(x.split('=') for x in query.split('&'))
+                if 'next' in params.keys():
+                    return redirect(params['next'])
+            except Exception:
+                return redirect('dashboard')
         else:
             messages.error(request, 'Login Failed')
             return redirect('login')
