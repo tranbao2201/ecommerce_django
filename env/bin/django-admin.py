@@ -1,4 +1,4 @@
-#!/home/tranbao/Desktop/ecommerce_django/env/bin/python3.6
+#!/home/baotranvan/local/ecommerce_django/env/bin/python3.6
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

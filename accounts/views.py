@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from accounts.models import Account
+from accounts.services.emails.user_email import UserEmailService
 from cart.models import Cart
 from cart.service.cart import CartService
 from .forms import RegistrationForm
@@ -18,6 +19,7 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
+from accounts.tasks import send_activate_email
 # Create your views here.
 
 
@@ -37,17 +39,8 @@ def register(request):
             user.save()
 
             # user activation
-            current_site = get_current_site(request)
-            mail_subject = "Please verify  your account"
-            message = render_to_string('accounts/emails/account_verification_email.html', {
-                'user': user,
-                'domain': current_site,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                'token': default_token_generator.make_token(user),
-            })
-            to_email = email
-            send_email = EmailMessage(mail_subject, message, to=[to_email])
-            send_email.send()
+            current_site = str(get_current_site(request))
+            send_activate_email.delay(current_site, user.id, email)
             messages.success(
                 request, 'Please verify your email address. We have sent you an email to your email address')
             return redirect('login')
@@ -115,16 +108,7 @@ def forgot_password(request):
             user = user.first()
             # user activation
             current_site = get_current_site(request)
-            mail_subject = "Reset your password"
-            message = render_to_string('accounts/emails/reset_password_email.html', {
-                'user': user,
-                'domain': current_site,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                'token': default_token_generator.make_token(user),
-            })
-            to_email = email
-            send_email = EmailMessage(mail_subject, message, to=[to_email])
-            send_email.send()
+            UserEmailService.send_activate_email(current_site, user, email)
             messages.success(request, 'Password reset email sent successfully')
             return redirect('home')
         else:
